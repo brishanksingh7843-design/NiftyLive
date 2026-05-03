@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Brishank Singh" />
+    <meta name="theme=color" content="Indigo" />
+    <link rel="icon" type="image/png" href="BSlogo.png" />
+    <meta name="description" content="Nifty Trading Table (NTT)" />
+    <meta property="og:title" content="Stock Market Table" />
+    <meta
+      property="og:image"
+      content="https://lh4.googleusercontent.com/proxy/U5g4m35T0EWud452PLa6IMYGnnbG5jB7WToRjlc28lNOQUV97p9sq4axgaJk3o5INke6rHRyC1SaFziUjUXDzXOUNgYeE6DPlkk2y_fF00kVGxdCikRB32xxjprKsg"
+    />
+    <title>Stock Market</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom left, rgb(90, 90, 90), white);
+        color: black;
+        padding: 20px;
+        font-family: "Trebuchet MS";
+        padding-bottom: 40px;
+      }
+      table {
+        table-layout: fixed;
+        width: 100%;
+        height: 40px;
+        min-width: 650px;
+        caption-side: top;
+        /* border-collapse: collapse; */
+        cursor: pointer;
+        font-size: 13px;
+        /* color:white; */
+      }
+      caption {
+        font-size: 25px;
+        background: linear-gradient(to right, red, blue);
+        background-clip: text;
+        color: transparent;
+        transform: translateY(-10px);
+        font-weight: bold;
+      }
+      th {
+        color: white;
+      }
+      th,
+      td {
+        text-align: center;
+        /* border: 2px solid grey; */
+        transition:
+          color 0.2s,
+          background-color 0.2s;
+        /* border-radius:20px; */
+      }
+      td {
+        font-size: 15px;
+      }
+      td:hover {
+        background: grey;
+        color: white;
+      }
+      .ceHead,
+      .ceH2 {
+        background: #1565c0;
+      }
+      .peHead,
+      .peH2 {
+        background: coral;
+      }
+      .strikeHead,
+      .sH2 {
+        background: lightslategrey;
+      }
+      .ceD {
+        background: lightblue;
+        border-radius: 20px;
+      }
+      .peD {
+        background: lightpink;
+        border-radius: 20px;
+      }
+      .sD {
+        background: rgb(180, 188, 196);
+      }
+      .livelist {
+        translate: 0px -1px;
+        height: 100%;
+        cursor: pointer;
+      }
+      .strikeHead {
+        font-size: 15px;
+      }
+      div {
+        position: relative;
+        z-index: 2;
+        height: 42px;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        row-gap: 5px;
+      }
+      textarea {
+        box-sizing: border-box;
+        font-size: 10px;
+      }
+      .st {
+        text-align: right;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <table>: The main container.
+     <thead>: The "brain" (header section).
+     <tbody>: The "body" (the data rows).
+     <tr>: Table Row (a horizontal line).
+     <th>: Table Header (bold, centered by default).
+     <td>: Table Data (the standard cell). -->
+
+    <!-- <div class="table">
+      <div class="strike">Strike</div>
+      <div>
+        <div class="ce"></div>
+      </div>
+      <div></div>
+    </div> -->
+    <h1 class="bottom">loging in @vimalchandrasingh</h1>
+    <h1 class="st">Live Strike</h1>
+    <table>
+      <caption>
+        Trading Graph
+      </caption>
+      <tr>
+        <th rowspan="2" class="strikeHead">Strike</th>
+        <th colspan="5" class="ceHead">CE</th>
+        <th colspan="5" class="peHead">PE</th>
+      </tr>
+      <tr>
+        <th class="ceH2">Buy</th>
+        <th class="ceH2">%</th>
+        <th class="ceH2">Sell</th>
+        <th class="ceH2">%</th>
+        <th class="ceH2">Total</th>
+        <th class="peH2">Buy</th>
+        <th class="peH2">%</th>
+        <th class="peH2">Sell</th>
+        <th class="peH2">%</th>
+        <th class="peH2">Total</th>
+      </tr>
+    </table>
+    <table class="livelist">
+      <tr class="row-0">
+        <td class="sD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+      </tr>
+
+      <tr class="row-0">
+        <td class="sD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+      </tr>
+
+      <tr class="row-0">
+        <td class="sD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="ceD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+        <td class="peD">---</td>
+      </tr>
+    </table>
+    <script>
+      let nesData = "";
+      let strike = [];
+
+      async function connectToServer() {
+        document.querySelector(".bottom").innerText = "Live Loading...";
+        try {
+          const response = await fetch("http://localhost:3000");
+          const data = await response.json();
+          console.log(data);
+          console.log(data.records);
+          console.log(data.records.underlyingValue);
+
+          nesData = data;
+          makeStrikes(data.records.underlyingValue);
+          apply(data.records.underlyingValue);
+          console.log("done");
+        } catch (error) {
+          console.log("failed");
+          document.querySelector(".bottom").innerText = "Failed to load";
+        }
+      }
+
+      function makeStrikes(s) {
+        let strikeBase = Math.round(s / 50) * 50;
+        strikeBase = strikeBase - 50 * 10;
+        strike = [];
+
+        /*for (let i = 1; i <= 10; i++) {
+          strikeBase-=50;
+        }
+          */
+
+        for (let i = 1; i <= 21; i++) {
+          strike.push(strikeBase);
+          strikeBase += 50;
+        }
+        console.log(strike);
+      }
+
+      function apply(strikecore) {
+        // find() is a very powerful tool like a search engine of arrays
+        // const local=nesData.records.data.CE.find(item => item.strikePrice ===2550);
+        const table = document.querySelector(".livelist");
+        document.querySelector(".st").innerText = strikecore;
+        let html = "";
+        let CEbuypertotal = 0;
+        let CEsellpertotal = 0;
+        let PEbuypertotal = 0;
+        let PEsellpertotal = 0;
+        let PEtotaltotal = 0;
+        let CEtotaltotal = 0;
+
+        for (let i = 0; i <= 20; i++) {
+          document.querySelector(".bottom").innerText =
+            "Waiting for the Data to come";
+          const specific = nesData.records.data.find(
+            (item) => item.strikePrice === strike[i],
+          );
+          //find is not a asyncronous function so we souldn't use await
+
+          const livestrike = specific.strikePrice;
+          const CEbuy = specific.CE.totalBuyQuantity;
+          const CEsell = specific.CE.totalSellQuantity;
+          const CEtotal = CEbuy + CEsell;
+          const CEbuyper = Math.round((CEbuy / CEtotal) * 10000) / 100;
+          const CEsellper = Math.round((CEsell / CEtotal) * 10000) / 100;
+          const PEbuy = specific.PE.totalBuyQuantity;
+          const PEsell = specific.PE.totalSellQuantity;
+          const PEtotal = PEbuy + PEsell;
+          const PEbuyper = Math.round((PEbuy / PEtotal) * 10000) / 100;
+          const PEsellper = Math.round((PEsell / PEtotal) * 10000) / 100;
+          CEbuypertotal += CEbuyper;
+          CEsellpertotal += CEsellper;
+          PEbuypertotal += PEbuyper;
+          PEsellpertotal += PEsellper;
+          PEtotaltotal += PEtotal;
+          CEtotaltotal += CEtotal;
+
+          //     const each = `
+          // <tr>
+
+          //   <td class="sD" >${livestrike}</td>
+          //   <td class="ceD">${CEbuy}</td>
+          //   <td class="ceD">${CEbuyper}%</td>
+          //   <td class="ceD">${CEsell}</td>
+          //   <td class="ceD">${CEsellper}%</td>
+          //   <td class="ceD">${CEtotal}</td>
+          //   <td class="peD">${PEbuy}</td>
+          //   <td class="peD">${PEbuyper}%</td>
+          //   <td class="peD">${PEsell}</td>
+          //   <td class="peD">${PEsellper}%</td>
+          //   <td class="peD">${PEtotal}</td>
+          // </tr>`;
+          let each = "";
+          if (i === 10) {
+            each = `
+      <tr>
+        <td class="sD" style='background:black;color:white;'>${livestrike}</td>
+        <td class="ceD">${CEbuy}</td>
+        <td class="ceD"style='background:black;color:white;'>${CEbuyper}%</td>
+        <td class="ceD">${CEsell}</td>
+        <td class="ceD" style='background:black;color:white'>${CEsellper}%</td>
+        <td class="ceD" '>${CEtotal}</td>
+        <td class="peD">${PEbuy}</td>
+        <td class="peD" style='background:black;color:white'>${PEbuyper}%</td>
+        <td class="peD">${PEsell}</td>
+        <td class="peD"style='background:black;color:white;'>${PEsellper}%</td>
+        <td class="peD" >${PEtotal}</td>
+      </tr>`;
+          } else if (i === 20) {
+            CEbuypertotal = Math.round((CEbuypertotal / 21) * 1000) / 1000;
+            CEsellpertotal = Math.round((CEsellpertotal / 21) * 1000) / 1000;
+            PEbuypertotal = Math.round((PEbuypertotal / 21) * 1000) / 1000;
+            PEsellpertotal = Math.round((PEsellpertotal / 21) * 1000) / 1000;
+            CEtotaltotal = Math.round(CEtotaltotal / 21);
+            PEtotaltotal = Math.round(PEtotaltotal / 21);
+            each = `
+      <tr style='translate:0 5px;'>
+        <td class="sD" style='border-radius:20px;background:darkblue;color:white'>Average</td>
+        <td class="ceD"style='background: #1565c0;color:white' colspan='2' style='background:'>Buy%<br>${CEbuypertotal}%</td>
+        <td class="ceD" style='background: #1565c0;color:white'colspan='2'>Sell%<br>${CEsellpertotal}%</td>
+        <td class='ceD' style='background:darkblue;color:white'>Live</td>
+        <td class="peD"style='
+        background: coral;color:white;' colspan='2'>Buy%<br>${PEbuypertotal}%</td>
+        <td class="peD"style='background:coral;color:white' colspan='2'>Sell%<br>${PEsellpertotal}%</td>
+        <td class='peD' style='background:darkblue;color:white'>Average</td>
+      </tr>`;
+          } else {
+            each = `
+      <tr>
+        <td class="sD">${livestrike}</td>
+        <td class="ceD">${CEbuy}</td>
+        <td class="ceD">${CEbuyper}%</td>
+        <td class="ceD">${CEsell}</td>
+        <td class="ceD">${CEsellper}%</td>
+        <td class="ceD">${CEtotal}</td>
+        <td class="peD">${PEbuy}</td>
+        <td class="peD">${PEbuyper}%</td>
+        <td class="peD">${PEsell}</td>
+        <td class="peD">${PEsellper}%</td>
+        <td class="peD">${PEtotal}</td>
+      </tr>`;
+          }
+
+          html += each;
+        }
+        table.innerHTML = html;
+
+        document.querySelector(".bottom").innerText = "Connected";
+      }
+
+      setInterval(connectToServer, 5000);
+      //putting brackets after your function name forces js to run it and after is completed it is gone so do't use brackets in setInterval to run it several times
+    </script>
+  </body>
+</html>
