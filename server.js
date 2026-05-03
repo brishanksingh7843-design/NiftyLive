@@ -33,7 +33,7 @@ app.get('/NiftyLive',async(request,response)=>{
       }
     });
 
-    console.log(targetUrl);
+    // console.log(targetUrl);
     const realobject=await flatString.json();
     // console.log(realobject);
     
