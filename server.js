@@ -3,8 +3,8 @@ const express=require('express');
 const app=express();
 const cors=require('cors');
 app.use(cors());
-
-app.get('/',async(request,response)=>{
+app.use(express.static('.'));
+app.get('/NiftyLive',async(request,response)=>{
   try{
 
     const expiryurl='https://www.nseindia.com/api/option-chain-contract-info?symbol=NIFTY';
@@ -27,7 +27,7 @@ app.get('/',async(request,response)=>{
 
     const flatString=await fetch(targetUrl,{
       headers:{
-        'User-Agent':'Mozilla/5.0',
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         'Accept-Encoding':'gzip,br,deflate',
         'Accept-Language':'en-US,en,q=0.9'
       }
@@ -51,7 +51,7 @@ app.get('/',async(request,response)=>{
 });
 
 
-app.listen(PORT,()=>{
+app.listen(PORT,'0.0.0.0',()=>{
 
   console.log(`Server started with PORT: ${PORT}`);
 
