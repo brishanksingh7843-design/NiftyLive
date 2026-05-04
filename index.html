@@ -267,12 +267,14 @@
           const PEtotal = PEbuy + PEsell;
           const PEbuyper = Math.round((PEbuy / PEtotal) * 10000) / 100;
           const PEsellper = Math.round((PEsell / PEtotal) * 10000) / 100;
+          if(i<=20){
           CEbuypertotal += CEbuyper;
           CEsellpertotal += CEsellper;
           PEbuypertotal += PEbuyper;
           PEsellpertotal += PEsellper;
           PEtotaltotal += PEtotal;
-          CEtotaltotal += CEtotal;
+          CEtotaltotal += CEtotal;  
+          }
 
           //     const each = `
           // <tr>
