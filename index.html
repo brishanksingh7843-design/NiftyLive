@@ -228,7 +228,7 @@
         }
           */
 
-        for (let i = 1; i <= 21; i++) {
+        for (let i = 1; i <= 22; i++) {
           strike.push(strikeBase);
           strikeBase += 50;
         }
@@ -248,7 +248,7 @@
         let PEtotaltotal = 0;
         let CEtotaltotal = 0;
 
-        for (let i = 0; i <= 20; i++) {
+        for (let i = 0; i <= 21; i++) {
           document.querySelector(".bottom").innerText =
             "Waiting for the Data to come";
           const specific = nesData.records.data.find(
@@ -305,7 +305,7 @@
         <td class="peD"style='background:black;color:white;'>${PEsellper}%</td>
         <td class="peD" >${PEtotal}</td>
       </tr>`;
-          } else if (i === 20) {
+          } else if (i === 21) {
             CEbuypertotal = Math.round((CEbuypertotal / 21) * 1000) / 1000;
             CEsellpertotal = Math.round((CEsellpertotal / 21) * 1000) / 1000;
             PEbuypertotal = Math.round((PEbuypertotal / 21) * 1000) / 1000;
