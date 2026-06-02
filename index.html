@@ -217,16 +217,16 @@
     </table>
     <div class="akak" id='akak'><input class="akakak" placeholder="enter password" onkeydown="passwordcheck(event);"></div>
     <script>
-      let password=JSON.parse(localStorage.getItem('passkey')) || 0;
-      if(password==1480){
-        document.getElementById('akak').style.display='none';
-      }
+      // let password=JSON.parse(localStorage.getItem('passkey')) || 0;
+      // if(password==1480){
+      //   document.getElementById('akak').style.display='none';
+      // }
       function passwordcheck(event){
         console.log(event.key);
         if(event.key=="Enter"){
           if(document.querySelector('.akakak').value==1480){
           document.getElementById('akak').style.display='none';
-            localStorage.setItem('passkey',JSON.stringify(document.querySelector('.akakak').value));
+            // localStorage.setItem('passkey',JSON.stringify(document.querySelector('.akakak').value));
           }
         }
       }
