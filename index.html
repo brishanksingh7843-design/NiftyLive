@@ -111,6 +111,24 @@
         text-align: right;
         color: white;
       }
+      .akak{
+        position:fixed;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background:linear-gradient(to bottom,black,grey,lightgrey);
+        z-index:111;
+      }
+      .akakak{
+        position:absolute;
+        left:50%;
+        top:50%;
+        translate:-50% -50%;
+        width:80%;
+        min-height:250px;
+        font-size:18px;
+      }
     </style>
   </head>
   <body>
@@ -195,7 +213,20 @@
         <td class="peD">---</td>
       </tr>
     </table>
+    <div class="akak"><input class="akakak" placeholder="enter password" onclick="passwordcheck(event);" type="number"></div>
     <script>
+      let password=localStorage.getItem('passkey') || 0;
+      if(password==1480){
+        document.getElementById('akak').style.display='none';
+      }
+      function passwordcheck(event){
+        if(event.key=="Enter"){
+          if(document.querySelector('akakak').value==1480){
+          document.getElementById('akak').style.display='none';
+            localStorage.setItem('passkey',JSON.stringify(document.querySelector('akakak').value));
+          }
+        }
+      }
       let nesData = "";
       let strike = [];
 
