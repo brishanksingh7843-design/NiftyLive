@@ -113,11 +113,10 @@
       }
       .akak{
         position:fixed;
-        left:0;
-        right:0;
-        top:0;
-        bottom:0;
-        background:linear-gradient(to bottom,black,grey,lightgrey);
+        box-sizing:border-box;
+        width:100vw;
+        height:100vh;
+        background:black;
         z-index:111;
       }
       .akakak{
@@ -126,7 +125,7 @@
         top:50%;
         translate:-50% -50%;
         width:80%;
-        height:250px;
+        height:150px;
       }
     </style>
   </head>
@@ -212,7 +211,7 @@
         <td class="peD">---</td>
       </tr>
     </table>
-    <div class="akak" id='akak'><input class="akakak" placeholder="enter password" onclick="passwordcheck(event);"></div>
+    <div class="akak" id='akak'><input class="akakak" placeholder="enter password" onkeydown="passwordcheck(event);"></div>
     <script>
       let password=JSON.parse(localStorage.getItem('passkey')) || 0;
       if(password==1480){
