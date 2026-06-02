@@ -121,13 +121,12 @@
         z-index:111;
       }
       .akakak{
-        position:absolute;
+        position:relative;
         left:50%;
         top:50%;
         translate:-50% -50%;
         width:80%;
-        min-height:250px;
-        font-size:18px;
+        height:250px;
       }
     </style>
   </head>
@@ -213,13 +212,14 @@
         <td class="peD">---</td>
       </tr>
     </table>
-    <div class="akak"><input class="akakak" placeholder="enter password" onclick="passwordcheck(event);" type="number"></div>
+    <div class="akak" id='akak'><input class="akakak" placeholder="enter password" onclick="passwordcheck(event);"></div>
     <script>
-      let password=localStorage.getItem('passkey') || 0;
+      let password=JSON.parse(localStorage.getItem('passkey')) || 0;
       if(password==1480){
         document.getElementById('akak').style.display='none';
       }
       function passwordcheck(event){
+        console.log(event.key);
         if(event.key=="Enter"){
           if(document.querySelector('akakak').value==1480){
           document.getElementById('akak').style.display='none';
