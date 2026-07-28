@@ -5,10 +5,10 @@ const cors=require('cors');
 app.use(cors());
 app.use(express.static('.'));
 app.get('/NiftyLive',async(request,response)=>{
+  console.log('entered');
   try{
-
     const expiryurl='https://www.nseindia.com/api/option-chain-contract-info?symbol=NIFTY';
-
+    console.log('in try');
     const expiry=await fetch(expiryurl,{
       headers:{
         'User-Agent':'Mozilla/5.0',
@@ -17,14 +17,13 @@ app.get('/NiftyLive',async(request,response)=>{
       }
     });
 
-
     const aliveit=await expiry.json();
     const workingexp=aliveit.expiryDates[0];
     console.log(workingexp);//current expiry
-
+    console.log('got above');
 
     const targetUrl=`https://www.nseindia.com/api/option-chain-v3?type=Indices&symbol=NIFTY&expiry=${workingexp}`;
-
+    console.log(targetUrl);
     const flatString=await fetch(targetUrl,{
       headers:{
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -47,6 +46,7 @@ app.get('/NiftyLive',async(request,response)=>{
 
   catch(error){
     console.log('Failed to load');
+    console.log(error);
   }
 });
 
